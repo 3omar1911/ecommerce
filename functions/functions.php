@@ -10,13 +10,15 @@ function getCats() {
 	
 	$runQuery = mysqli_query($con, $queryStr);
 
-	while($row = mysqli_fetch_array($runQuery)) {
+	/*while($row = mysqli_fetch_array($runQuery)) {
 
 		$title = $row['title'];
 
 		echo "<li><a href='#'>$title</a></li>";
 
-	}
+	}*/
+
+	return $runQuery;
 
 }
 
@@ -28,12 +30,14 @@ function getBrands() {
 	
 	$runQuery = mysqli_query($con, $queryStr);
 
-	while($row = mysqli_fetch_array($runQuery)) {
+	/*while($row = mysqli_fetch_array($runQuery)) {
 
 		$title = $row['title'];
 
 		echo "<li><a href='#'>$title</a></li>";
 
-	}
+	}*/
+
+	return $runQuery;
 
 }

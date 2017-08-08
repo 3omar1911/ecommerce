@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+	include('../functions/functions.php');
+?>
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../styles/style.css">
@@ -17,13 +20,39 @@
 		</tr>
 
 		<tr>
-			<td>Product Categorie</td>
-			<td><input type="text" name="cat"></td>
+			<td>Product Category</td>
+			<td>
+				<select name="product_cat">
+					<option>Select a category</option>
+					<?php
+						$rows = getCats(); 
+					 while($row = mysqli_fetch_array($rows)) {
+
+					 	$title = $row['title'];
+					 	$id = $row['id'];
+						echo "<option value='$id'>$title</option>";
+					 }
+					?>
+				</select>
+			</td>
 		</tr>
 
 		<tr>
 			<td>Product Brand</td>
-			<td><input type="text" name="brand"></td>
+			<td>
+				<select name="product_cat">
+					<option>Select a Brand</option>
+					<?php
+						$rows = getBrands(); 
+					 while($row = mysqli_fetch_array($rows)) {
+
+					 	$title = $row['title'];
+					 	$id = $row['id'];
+						echo "<option value='$id'>$title</option>";
+					 }
+					?>
+				</select>
+			</td>
 		</tr>
 
 		<tr>
@@ -33,13 +62,13 @@
 
 		<tr>
 			<td>Product Description</td>
-			<td><input type="text" name="descr"></td>
+			<td><textarea name="product_desc" cols="20" rows="10"></textarea></td>
 		</tr>
 
-		
+
 		<tr>
 			<td>Product image</td>
-			<td><input type="text" name="pro_image"></td>
+			<td><input type="file" name="pro_image"></td>
 		</tr>
 
 		<tr>

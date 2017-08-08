@@ -46,7 +46,15 @@ include('functions/functions.php');
 
 				<ul class="sidebar_items">
 
-					<?php getCats(); ?>
+					<?php
+					 $rows = getCats(); 
+					 while($row = mysqli_fetch_array($rows)) {
+
+					 	$title = $row['title'];
+						echo "<li><a href='#'>$title</a></li>";
+					 }
+
+					?>
 				
 				</ul>
 				
@@ -55,7 +63,15 @@ include('functions/functions.php');
 
 				<ul class="sidebar_items">
 
-						<?php getBrands(); ?>
+					<?php
+					 $rows = getBrands(); 
+					 while($row = mysqli_fetch_array($rows)) {
+
+					 	$title = $row['title'];
+						echo "<li><a href='#'>$title</a></li>";
+					 }
+
+					?>
 					
 				</ul>
 
