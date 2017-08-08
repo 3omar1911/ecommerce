@@ -36,6 +36,7 @@
 			<td><input type="text" name="descr"></td>
 		</tr>
 
+		
 		<tr>
 			<td>Product image</td>
 			<td><input type="text" name="pro_image"></td>
