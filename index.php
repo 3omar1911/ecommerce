@@ -7,7 +7,7 @@ include('functions/functions.php');
 <html>
 <head>
 	<title>Online Shop</title>
-	<link rel="stylesheet" type="text/css" href="styles/style.css">
+	<link rel="stylesheet" type="text/css" href="styles/style2.css">
 </head>
 <body>
 
@@ -39,7 +39,9 @@ include('functions/functions.php');
 	</div>
 
 	<div class="content_wrapper">
-		<div id="content_area">Content Area</div>
+		<div id="content_area">
+			<?php getProducts(); ?>
+		</div>
 		<div id="sidebar">
 			
 			<div class="sidebar_title">Categories</div>

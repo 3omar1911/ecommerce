@@ -1,7 +1,29 @@
 <!DOCTYPE html>
+
 <?php
-	include('../functions/functions.php');
+include('../functions/functions.php');
+if(isset($_POST['submitProduct'])) {
+
+	$title = $_POST['title'];
+	$product_cat = $_POST['product_cat'];
+	$product_brand = $_POST['product_brand'];
+	$price = $_POST['price'];
+	$product_desc = $_POST['product_desc'];
+	$kwd = $_POST['kwd'];
+
+	$imgName = $_FILES['pro_image']['name'];
+	$imgTmpName = $_FILES['pro_image']['tmp_name'];
+
+	move_uploaded_file($imgTmpName, "product_images/$imgName");
+
+	$insertQuery = "INSERT INTO products (cat, brand, title, price, description, image, keywords) VALUES ($product_cat, $product_brand, '$title', $price, '$product_desc', '$imgName', '$kwd')";
+
+	mysqli_query($con, $insertQuery);
+}
+
 ?>
+
+
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="../styles/style.css">
@@ -40,7 +62,7 @@
 		<tr>
 			<td>Product Brand</td>
 			<td>
-				<select name="product_cat">
+				<select name="product_brand">
 					<option>Select a Brand</option>
 					<?php
 						$rows = getBrands(); 
@@ -79,10 +101,11 @@
 		
 		<tr>
 			
-			<th colspan="2"><input type="submit" value="insert product"></th>
+			<th colspan="2"><input type="submit" name="submitProduct" value="insert product"></th>
 		</tr>
 	</table>
 </form>
 
 </body>
 </html>
+

@@ -28,7 +28,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-	background: red;
+	background: skyblue;
 }
 
 .main_wrapper {
@@ -176,6 +176,7 @@ body {
 #singleProduct {
 	border: 2px solid gray;
 	float: left;
-	margin-left: 20px;
+	margin: 20px 20px;
 	padding: 10px;
+	text-align: center;
 }
